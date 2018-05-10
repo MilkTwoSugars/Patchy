@@ -98,9 +98,10 @@ function Grid() {
 
         this.rack.updateRack(this.activeSource, this.activeLFOA, this.activeLFOB, this.activeFilter);
 
-        if (this.active) {
-            this.startAll();
-        }
+        
+        this.startAll();
+        this.stopAll();
+        
     }
 
     this.draw = function() {
