@@ -18,15 +18,13 @@ function initialise() {
 
         for (var i = 0; i < 4; i++){
             let grid = new Grid();
-            grid.initialise(i * 450);
+            grid.initialise(false, i * 450);
             grids.push(grid);
         }
 
-
-        console.log(grids);
         activeObject = grids[0].activeFilter;
 
-        mixer = new Mixer(grids[0].rackHeight + grids[0].margin, 100);
+        mixer = new Mixer((windowHeight / 5) * 4, 100);
 
         mixer.updateMixer(activeObject);
 

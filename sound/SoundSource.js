@@ -38,6 +38,10 @@ function SoundSource() {
         this.oscillator.start();
     }
 
+    this.stop = function () {
+        this.oscillator.stop();
+    }
+
     this.connectTo = function (output) {
         this.oscillator.connect(output);
     }
@@ -47,11 +51,12 @@ function SoundSource() {
     }
 
     this.draw = function () {
-        if (this == activeObject){
-            fill("red");
+        if (this == activeObject) {
+            fill(ACTIVE_COLOUR);
+        } else {
+            fill(SOURCE_COLOUR)
         }
         ellipse(this.position.x, this.position.y, this.size, this.size)
-        noFill();
     }
 
     this.clicked = function (distance) {

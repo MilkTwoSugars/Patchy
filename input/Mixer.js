@@ -47,7 +47,8 @@ function Mixer(y, size, object) {
             }
         }
         rectMode(CENTER);
-        rect(this.x, this.y, this.size, this.size);
+        fill(MIXER_COLOUR);
+        ellipse(this.x, this.y, this.size, this.size);
         this.updateObject();
     }
 

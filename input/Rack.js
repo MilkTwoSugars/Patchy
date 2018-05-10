@@ -33,10 +33,16 @@ function Rack(width, height) {
     }
 
     this.drawConnections = function () {
-        stroke("red");
+        stroke(ACTIVE_COLOUR);
+        fill(ACTIVE_COLOUR);
+        strokeWeight(4);
+        ellipse(this.source.position.x, this.source.position.y, 25, 25);
         line(this.source.position.x, this.source.position.y, this.lfoA.position.x, this.lfoA.position.y);
-        line(this.lfoA.position.x, this.lfoA.position.y, this.lfoB.position.x, this.lfoB.position.y, );
+        ellipse(this.lfoA.position.x, this.lfoA.position.y, 25, 25);
+        line(this.lfoA.position.x, this.lfoA.position.y, this.lfoB.position.x, this.lfoB.position.y);
+        ellipse(this.lfoB.position.x, this.lfoB.position.y, 25, 25);
         line(this.lfoB.position.x, this.lfoB.position.y, this.filter.position.x, this.filter.position.y);
-        stroke("black")
+        ellipse(this.filter.position.x, this.filter.position.y, 25, 25);
+        noStroke();
     }
 }

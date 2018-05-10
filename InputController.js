@@ -14,6 +14,8 @@ function clickHandler() {
 
     for (let g of grids) {
 
+        g.button.clicked(getDistance(g.button));
+
         for (let s of g.sources) {
             let a = s.clicked(getDistance(s.position));
             if (a) {

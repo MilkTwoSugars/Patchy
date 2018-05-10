@@ -42,12 +42,17 @@ function LFO() {
         this.oscillator.start();
     }
 
+    this.stop = function () {
+        this.oscillator.stop();
+    }
+
     this.draw = function () {
-        if (this == activeObject){
-            fill("red");
+        if (this == activeObject) {
+            fill(ACTIVE_COLOUR);
+        } else {
+            fill(LFO_COLOUR)
         }
         ellipse(this.position.x, this.position.y, this.size, this.size)
-        noFill();
     }
 
     this.clicked = function (distance) {

@@ -56,8 +56,10 @@ function SoundFilter() {
     }
 
     this.draw = function () {
-        if (this == activeObject){
-            fill("red");
+        if (this == activeObject) {
+            fill(ACTIVE_COLOUR);
+        } else {
+            fill(FILTER_COLOUR)
         }
         ellipse(this.position.x, this.position.y, this.size, this.size)
         noFill();
