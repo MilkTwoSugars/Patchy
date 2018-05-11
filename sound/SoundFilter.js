@@ -43,6 +43,10 @@ function SoundFilter() {
         this.filterObj.res(resonance);
     }
 
+    this.setAmplitude = function (amplitude) {
+        this.filterObj.amp(amplitude);
+    }
+
     this.getResonance = function () {
         return this.resonance;
     }

@@ -64,3 +64,7 @@ function touchEnded() {
 function getDistance(element) {
     return float(dist(mouseX, mouseY, element.x, element.y));
 }
+
+function windowResized() {
+    resizeCanvas(windowWidth, windowHeight);
+  }

@@ -8,6 +8,8 @@ function Button(grid, active, x, y, size) {
 
     this.draw = function () {
 
+        rectMode(CENTER);
+
         fill(BUTTONOFF_COLOUR);
         rect(this.x, this.y, this.size, this.size);
 
@@ -26,10 +28,10 @@ function Button(grid, active, x, y, size) {
     this.update = function () {
         if (this.active) {
             this.active = false;
-            this.grid.stopAll();
+            this.grid.mute();
         } else {
             this.active = true;
-            this.grid.startAll();
+            this.grid.unmute();
         }
     }
 }

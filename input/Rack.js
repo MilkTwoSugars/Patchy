@@ -36,13 +36,13 @@ function Rack(width, height) {
         stroke(ACTIVE_COLOUR);
         fill(ACTIVE_COLOUR);
         strokeWeight(4);
-        ellipse(this.source.position.x, this.source.position.y, 25, 25);
+        ellipse(this.source.position.x, this.source.position.y, this.source.size / 4, this.source.size / 4);
         line(this.source.position.x, this.source.position.y, this.lfoA.position.x, this.lfoA.position.y);
-        ellipse(this.lfoA.position.x, this.lfoA.position.y, 25, 25);
+        ellipse(this.lfoA.position.x, this.lfoA.position.y, this.lfoA.size / 4, this.lfoA.size / 4);
         line(this.lfoA.position.x, this.lfoA.position.y, this.lfoB.position.x, this.lfoB.position.y);
-        ellipse(this.lfoB.position.x, this.lfoB.position.y, 25, 25);
+        ellipse(this.lfoB.position.x, this.lfoB.position.y, this.lfoB.size / 4, this.lfoB.size / 4);
         line(this.lfoB.position.x, this.lfoB.position.y, this.filter.position.x, this.filter.position.y);
-        ellipse(this.filter.position.x, this.filter.position.y, 25, 25);
+        ellipse(this.filter.position.x, this.filter.position.y, this.filter.size / 4, this.filter.size / 4);
         noStroke();
     }
 }

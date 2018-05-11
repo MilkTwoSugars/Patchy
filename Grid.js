@@ -19,7 +19,7 @@ function Grid() {
     this.column1, this.column2, this.column3, this.column4;
     this.row1, this.row2, this.row3, this.row4;
 
-    this.buttonSize = 100;
+    this.buttonSize;
 
     this.button;
     this.active;
@@ -28,7 +28,8 @@ function Grid() {
 
         this.active = startActive;
 
-        this.margin = 100;
+        this.margin = windowWidth / 20;
+        this.buttonSize = this.margin;
 
         this.column1 = 0 + this.margin + leftOffset;
         this.column2 = this.column1 + this.margin;
@@ -46,13 +47,13 @@ function Grid() {
         this.button = new Button(this, this.active, this.margin + leftOffset, this.row4 + this.margin, this.buttonSize)
 
         this.soundSource1 = new SoundSource();
-        this.soundSource1.initialise("sine", 100, 0.3, createVector(this.column1, this.row1), this.buttonSize);
+        this.soundSource1.initialise("sine", 100, 0.1, createVector(this.column1, this.row1), this.buttonSize);
         this.soundSource2 = new SoundSource();
         this.soundSource2.initialise("sawtooth", 120, 0.1, createVector(this.column1, this.row2), this.buttonSize);
         this.soundSource3 = new SoundSource();
         this.soundSource3.initialise("square", 140, 0.1, createVector(this.column1, this.row3), this.buttonSize);
         this.soundSource4 = new SoundSource();
-        this.soundSource4.initialise("triangle", 160, 0.3, createVector(this.column1, this.row4), this.buttonSize);
+        this.soundSource4.initialise("triangle", 160, 0.1, createVector(this.column1, this.row4), this.buttonSize);
 
         this.sources.push(this.soundSource1, this.soundSource2, this.soundSource3, this.soundSource4);
 
@@ -98,9 +99,8 @@ function Grid() {
 
         this.rack.updateRack(this.activeSource, this.activeLFOA, this.activeLFOB, this.activeFilter);
 
-        
         this.startAll();
-        this.stopAll();
+        this.mute();
         
     }
 
@@ -153,4 +153,17 @@ function Grid() {
             l.stop();
         }
     }
+
+    this.mute = function () {
+        for (let s of this.sources) {
+            s.setAmplitude(0);
+        }
+    }
+
+    this.unmute = function () {
+        for (let s of this.sources) {
+            s.setAmplitude(0.1);
+        }
+    }
+
 }

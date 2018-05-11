@@ -12,6 +12,12 @@ function draw() {
             g.draw();
         }
         mixer.draw();
+    } else {
+        background(BACKGROUND_COLOUR);
+        textSize(32);
+        textAlign(CENTER);
+        fill(ACTIVE_COLOUR);
+        text('Touch to begin', windowWidth / 2, windowHeight / 2);
     }
 }
 
