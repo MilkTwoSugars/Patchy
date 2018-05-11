@@ -162,7 +162,11 @@ function Grid() {
 
     this.unmute = function () {
         for (let s of this.sources) {
+            if (s.type == "square" || s.type == "sawtooth"){
             s.setAmplitude(0.1);
+            } else {
+                s.setAmplitude(0.3);
+            }
         }
     }
 
