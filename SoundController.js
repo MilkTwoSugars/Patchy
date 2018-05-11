@@ -11,6 +11,8 @@ const lowestLFOFreq = 0;
 const highestLFOFreq = 10;
 const lowestResonance = -12;
 const highestResonance = 12;
+const defaultLFOAmplitude = 750;
+const defaultFilterFrequency = 1200;
 
 function initialise() {
 
